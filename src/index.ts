@@ -123,7 +123,12 @@ const main = async () => {
     async({}) => {
       const environmentInformationClient = new EnvironmentInformationClient(dtClient);
 
+      console.error(`Fetching environment information from ${dtEnvironment}`);
+
       const environmentInfo = await environmentInformationClient.getEnvironmentInformation();
+
+      console.error(`Environment Information: ${JSON.stringify(environmentInfo)}`);
+      
       let resp = `Environment Information (also referred to as tenant):
           ${JSON.stringify(environmentInfo)}\n`;
 
